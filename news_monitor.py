@@ -12,7 +12,7 @@ if search_term:
     for col in df.select_dtypes(include='object'):
         df[col] = df[col].str.strip()
     df.drop_duplicates(subset='title', inplace=True)
-    for news in data['articles'][:5]:
+    for news in data['articles']:
         st.write(f"来源：{news['source']['name']}")
         st.write(f"标题：{news['title']}")
         st.write(f"作者：{news['author']}")
