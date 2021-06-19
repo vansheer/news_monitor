@@ -3,7 +3,7 @@ import pandas as pd
 from newsapi import NewsApiClient
 import datetime
 
-newsapi = NewsApiClient(api_key='761ac61282ca4aefb3fb755ed9c55a89')
+newsapi = NewsApiClient(api_key=st.secrets['api_key'])
 
 search_term = st.text_input('输入关键词', max_chars=15)
 if search_term:
