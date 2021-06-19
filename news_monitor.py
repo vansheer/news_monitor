@@ -16,6 +16,7 @@ if search_term:
         st.write(f"来源：{news['source']['name']}")
         st.write(f"标题：{news['title']}")
         st.write(f"作者：{news['author']}")
+        st.write(f"发布日期：{news['publishedAt']}")
         st.write(f"正文：{news['description']}")
         st.write(f"原文链接：{news['url']}")
         st.write('\n')
