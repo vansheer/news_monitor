@@ -17,6 +17,7 @@ if search_term:
     df.sort_values(by='publishedAt', ascending=False, inplace=True)
 
     for news in df.to_dict(orient='records'):
+        st.write(f"搜索结果{df.shape[0]}条，开始于{df['publishedAt'].min().date()}")
         st.title(news['title'])
         st.write(f"原文链接：{news['url']}")
         st.write(f"来源：{news['source']['name']}")
