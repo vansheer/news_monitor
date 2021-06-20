@@ -25,6 +25,6 @@ if search_term:
         st.write(f"发布日期：{news['publishedAt'].date()}")
         st.write(f"作者：{news['author']}")
         st.write(f"原文：{news['description']}")
-        st.write(f"译文：{TextBlob(news['description'].translate(to='zh')}")
+        st.write(f"译文：{TextBlob(news['description']).translate(to='zh')}")
         st.write('\n')
         st.write('\n')
