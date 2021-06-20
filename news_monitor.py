@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from newsapi import NewsApiClient
+from textblob import TextBlob
 import datetime
 
 newsapi = NewsApiClient(api_key=st.secrets['api_key'])
@@ -23,6 +24,7 @@ if search_term:
         st.write(f"来源：{news['source']['name']}")
         st.write(f"发布日期：{news['publishedAt'].date()}")
         st.write(f"作者：{news['author']}")
-        st.write(f"正文：{news['description']}")
+        st.write(f"原文：{news['description']}")
+        st.write(f"译文：{TextBlob(news['description'].translate(to='zh')}")
         st.write('\n')
         st.write('\n')
